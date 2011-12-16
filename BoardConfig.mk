@@ -1,0 +1,28 @@
+USE_CAMERA_STUB := true
+
+# inherit from the proprietary version
+-include vendor/samsung/toro/BoardConfigVendor.mk
+
+TARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := unknown
+TARGET_CPU_ABI := armeabi
+TARGET_BOOTLOADER_BOARD_NAME := toro
+
+BOARD_KERNEL_CMDLINE := 
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_PAGESIZE := 2048
+
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_RECOVERY_UI_LIB := librecovery_ui_tuna
+TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_tuna
+
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 685768704
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 14539537408
+BOARD_FLASH_BLOCK_SIZE := 4096
+
+TARGET_PREBUILT_KERNEL := device/samsung/toro/kernel
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+# Use this flag if the board has a ext4 partition larger than 2gb
+#BOARD_HAS_LARGE_FILESYSTEM := true
